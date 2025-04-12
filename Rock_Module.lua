@@ -1,4 +1,4 @@
-local Debris = workspace:WaitForChild("Debris")
+local Debris = workspace:WaitForChild("Thrown")
 local TweenService = game:GetService("TweenService")
 
 local rockModule = {}
@@ -29,7 +29,7 @@ function rockModule:OnGround(position, size, raw)
 		NewPart.Name = "Rock"
 		NewPart.CanCollide = false
 		NewPart.Transparency = 0
-		NewPart.Parent = workspace.Debris
+		NewPart.Parent = workspace.Thrown
 		NewPart.Shape = Enum.PartType.Block
 
 		if math.random(1,3) == 5 then
@@ -39,7 +39,7 @@ function rockModule:OnGround(position, size, raw)
 		NewPart.CFrame = cframe
 		NewPart.CFrame = CFrame.lookAt(Vector3.new(CFramePosition.X,0,CFramePosition.Z), Vector3.new(position.Position.X,0,position.Position.Z))
 
-		local ignoreFolder = game.Workspace.Visuals
+		local ignoreFolder = game.Workspace.Thrown
 
 		local ignoreList = {}
 
