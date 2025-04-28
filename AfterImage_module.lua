@@ -25,12 +25,11 @@ function Module.AfterImage()
             clone.Material = Module.Settings.Material
             clone.Anchored = true
             clone.CanCollide = false
-            if part.Name == "Head" and part:IsA("MeshPart") then
-                local meshClone = part:FindFirstChildOfClass("MeshId") or part:FindFirstChildOfClass("Mesh")
-                if meshClone then
-                    clone.MeshId = meshClone.MeshId
-                    clone.MeshType = meshClone.MeshType
-                end
+            if part.Name == "Head" then
+                local mesh = Instance.new("SpecialMesh")
+                mesh.MeshType = Enum.MeshType.Head
+                mesh.Scale = Vector3.new(1.25, 1.25, 1.25)
+                mesh.Parent = part
             end
             clone.Parent = workspace
             task.spawn(function()
