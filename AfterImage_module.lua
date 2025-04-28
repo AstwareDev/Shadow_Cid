@@ -25,6 +25,13 @@ function Module.AfterImage()
             clone.Material = Module.Settings.Material
             clone.Anchored = true
             clone.CanCollide = false
+            if part.Name == "Head" and part:IsA("MeshPart") then
+                local meshClone = part:FindFirstChildOfClass("MeshId") or part:FindFirstChildOfClass("Mesh")
+                if meshClone then
+                    clone.MeshId = meshClone.MeshId
+                    clone.MeshType = meshClone.MeshType
+                end
+            end
             clone.Parent = workspace
             task.spawn(function()
                 local start = tick()
