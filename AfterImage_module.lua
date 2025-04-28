@@ -29,7 +29,7 @@ function Module.AfterImage()
                 local mesh = Instance.new("SpecialMesh")
                 mesh.MeshType = Enum.MeshType.Head
                 mesh.Scale = Vector3.new(1.25, 1.25, 1.25)
-                mesh.Parent = part
+                mesh.Parent = clone
             end
             clone.Parent = workspace
             task.spawn(function()
