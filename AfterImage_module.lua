@@ -26,10 +26,7 @@ function Module.AfterImage()
             clone.Anchored = true
             clone.CanCollide = false
             if part.Name == "Head" then
-                local mesh = Instance.new("SpecialMesh")
-                mesh.MeshType = Enum.MeshType.Head
-                mesh.Scale = Vector3.new(1.25, 1.25, 1.25)
-                mesh.Parent = clone
+                clone.Shape = Enum.PartType.Ball
             end
             clone.Parent = workspace
             task.spawn(function()
